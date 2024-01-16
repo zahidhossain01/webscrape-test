@@ -32,8 +32,8 @@ import puppeteer from 'puppeteer';
                 "https://www.apartments.com/the-hazelwood-milpitas-ca/cv309he/",
                 "https://www.apartments.com/one-ten-remington-apartments-sunnyvale-ca/32sjwjf/",
                 "https://www.apartments.com/marina-cove-santa-clara-ca/gsl8bkx/"]
-                
-    for(const url in urls){
+
+    for(const url of urls){
         console.log(url)
         await page.goto(url, {timeout: 60000});
 
@@ -46,7 +46,7 @@ import puppeteer from 'puppeteer';
         const address = await addressElement?.evaluate(el => el.innerText.substring("Property Address: ".length));
         const name = await nameElement?.evaluate(el => el.textContent.trim());
 
-        console.log(`${name}: ${address}`);
+        console.log(`${name}: ${address}\n`);
     }
     
 
