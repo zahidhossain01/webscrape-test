@@ -5,10 +5,13 @@ import puppeteer from 'puppeteer';
 
 (async () => {
 
-    // const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch();
     // const browser = await puppeteer.launch({headless: "new"});
-    const browser = await puppeteer.launch({headless: false});
+    // const browser = await puppeteer.launch({headless: false});
+
     const page = await browser.newPage();
+    await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
+    // SETTING USER AGENT FIXES IT...
     await page.setViewport({
         width: 1280,
         height: 720,
