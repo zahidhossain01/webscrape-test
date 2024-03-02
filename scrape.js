@@ -3,16 +3,18 @@ import puppeteer from 'puppeteer';
 
 // https://www.apartments.com/aviana-apartments-mountain-view-ca/z4nchrz/
 
+// To run: `node scrape.js`
+
 (async () => {
 
     // const browser = await puppeteer.launch({headless: false});
-    // const browser = await puppeteer.launch();
-    const browser = await puppeteer.launch({headless: "new"});
+    const browser = await puppeteer.launch();
+    // const browser = await puppeteer.launch({headless: "new"});
     // const browser = await puppeteer.launch({headless: "new", defaultViewport: null});
-
+    
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
-    // SETTING USER AGENT FIXES IT...
+    // SETTING USER AGENT FIXES IT... why..?
     // await page.setViewport({
     //     width: 1280,
     //     height: 720,
